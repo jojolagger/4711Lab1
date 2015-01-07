@@ -11,10 +11,13 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+            //import student file
             include('student.php');
-
+            
+            //makes array of students
             $students = array();
 
+            //adds a student
             $first = new Student();
             $first->surname = "Doe";
             $first->first_name = "John";
@@ -25,6 +28,7 @@ and open the template in the editor.
             $first->add_grade(55);
             $students['j123'] = $first;
             
+            //and another
             $second = new Student();
             $second->surname = "Einstein";
             $second->first_name = "Albert";
@@ -36,6 +40,22 @@ and open the template in the editor.
             $second->add_grade(50);
             $students['a456'] = $second;
             
+            //then the best student
+            $third = new Student();
+            $third->surname = "Dellow";
+            $third->first_name = "Alex";
+            $third->add_email('Formal','alex_dellow@hotmail.co.uk');
+            $third->add_email('Casual','jojolagger@gmail.com');
+            $third->add_email('School','adellow@my.bcit.ca');
+            $third->add_grade(80);
+            $third->add_grade(84);
+            $third->add_grade(82);
+            $students['a455'] = $third;
+            
+            //sort them by the key they were put into the array with
+            ksort($students);
+            
+            //for each student, display them
             foreach($students as $student){
                 echo $student->toString();
             }
