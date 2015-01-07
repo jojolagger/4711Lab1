@@ -1,2 +1,4 @@
-# 4711Lab1
-Lab1RepoForCOMP4711
+SillyStudents
+=============
+
+COMP4711 Lab 1
